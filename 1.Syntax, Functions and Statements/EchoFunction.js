@@ -3,4 +3,4 @@ function EchoFunc (inputString) {
     console.log(inputString)
 }
 
-EchoFunc("Hello, JavaScript!")
+
