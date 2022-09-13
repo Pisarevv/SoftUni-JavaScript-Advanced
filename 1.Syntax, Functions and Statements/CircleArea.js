@@ -13,4 +13,3 @@ function CalculateArea(inputValue)
 }
 
 
-CalculateArea('asd')

@@ -1,0 +1,20 @@
+function MathCalculation(firstNumber,secondNumber,operator)
+{
+    let result = 0;
+
+    switch(operator)
+    {
+         case '+': result = firstNumber + secondNumber; break;
+         case '-': result = firstNumber - secondNumber; break;
+         case '*': result = firstNumber * secondNumber; break;
+         case '**': result = firstNumber ** secondNumber; break;
+         case '/': result = firstNumber / secondNumber; break;
+         case '%': result = firstNumber % secondNumber; break;
+
+         
+    }
+    console.log(result.toFixed(1))
+}
+
+
+MathCalculation(3,5.5,'*');
