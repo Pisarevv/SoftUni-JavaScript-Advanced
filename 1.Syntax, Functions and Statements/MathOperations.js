@@ -13,8 +13,6 @@ function MathCalculation(firstNumber,secondNumber,operator)
 
          
     }
-    console.log(result.toFixed(1))
+    console.log(result)
 }
 
-
-MathCalculation(3,5.5,'*');
