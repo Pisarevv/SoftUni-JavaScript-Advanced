@@ -1,6 +1,6 @@
-function echoFunc (inputString) { 
+function EchoFunc (inputString) { 
     console.log(inputString.length)
     console.log(inputString)
 }
 
-echoFunc("Hello, JavaScript!")
+EchoFunc("Hello, JavaScript!")
