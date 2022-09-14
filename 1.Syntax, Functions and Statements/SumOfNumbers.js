@@ -3,12 +3,11 @@ function CalculateSumOfNumbers (firstNumber, secondNumber){
     let second = Number(secondNumber);
     let result = 0;
 
-    for (i = firstNumber; i <= secondNumber; i++)
+    for (let i = first; i <= second; i++)
     {
-        result += Number(i);
+        result += i;
     }
     console.log(result);
 }
 
 
-CalculateSumOfNumbers('1','5')
