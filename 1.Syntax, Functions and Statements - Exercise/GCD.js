@@ -1,23 +1,16 @@
-function CalculateGDC(firstNumber,secondNumber)
+function CalculateGDC(x,y)
 {
-    let firstNumberDivisitors = [];
-    let secondNumberDivisitors = [];
-  for(i=firstNumber; i>2; i--)
-  {
-     if(Number(firstNumber)%i == 0){
-        firstNumberDivisitors.push(Number(i));
-     }
-  }
+   if ((typeof x !== 'number') || (typeof y !== 'number')) 
+   return false;
+ x = Math.abs(x);
+ y = Math.abs(y);
+ while(y) {
+   var t = y;
+   y = x % y;
+   x = t;
+ }
+ console.log(x);
 
-  for(i=secondNumber; i>0; i--)
-  {
-     if(Number(secondNumber)%i == 0){
-        secondNumberDivisitors.push(Number(i));
-     }
-  }
-
-  console.log(firstNumberDivisitors);
-  console.log(secondNumberDivisitors);
 }
 
 
