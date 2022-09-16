@@ -26,7 +26,7 @@ function CheckDriverSpeed(speed,location)
 
    function CheckLimit(speed,limit){
     let result = '';
-    if(speed < limit){
+    if(speed <= limit){
         result = `Driving ${speed} km/h in a ${limit} zone`;
     }
     else{
