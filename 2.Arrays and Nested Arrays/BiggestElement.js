@@ -8,7 +8,7 @@ function ReturnBiggestElementInNestedArray(inputArray)
         biggestValue = x;
     })
   }
-  console.log(biggestValue);
+
   return biggestValue;
 }
 
