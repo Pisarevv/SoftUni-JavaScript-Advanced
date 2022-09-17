@@ -1,9 +1,9 @@
-function FindBiggestHalf(input){
-    let inputArray = input;
-    let sortedArray = inputArray.sort((a,b)=> a - b);
-    let result = sortedArray.slice(sortedArray.length/2,sortedArray.length);
+function FindBiggestHalf(array){
+    array.sort((a,b)=> a - b);
+    const middleOfArray = Math.floor(array.length/2);
+    let result = array.slice(middleOfArray);
 
-    console.log(result);
+    return result;
 }
 
 FindBiggestHalf([4, 7, 2, 5]);
