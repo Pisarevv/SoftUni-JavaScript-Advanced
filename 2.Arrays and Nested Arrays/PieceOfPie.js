@@ -3,7 +3,7 @@ function ReturnPiecesOfPie(inputArray,firstDelimer,secondDelimer)
     let firstIndexOfDelimer = inputArray.indexOf(firstDelimer);
     let secondIndexOfDelimer = inputArray.indexOf(secondDelimer);
     let result = inputArray.slice(firstIndexOfDelimer,secondIndexOfDelimer + 1);
-    console.log(result);
+    return result;
 }
 
 
