@@ -15,8 +15,7 @@ function CalculateDiagonalSums(inputArray){
        }
     }
 
-    console.log(mainSum);
-    console.log(secondarySum);
+    return `${mainSum} ${secondarySum}`;
 }
 
 CalculateDiagonalSums([[20, 40],
