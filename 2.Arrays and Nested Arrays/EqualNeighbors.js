@@ -15,7 +15,7 @@ function FindEqualNeighbours(matrix){
             }
         }
     }
-    console.log(neighbors);
+    return neighbors;
 }
 
 FindEqualNeighbours([['2', '3', '4', '7', '0'],

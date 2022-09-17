@@ -1,13 +1,31 @@
-function CalculateSumOfASequence(sequenceLenght,numberOfArguments){
-    let array = [1,1,2];
-    let lastIndex = 0;
-    let resultOfSum = 0;
-    for (let i=0;i<sequenceLenght;i++)
-    {
-        for
-       
+function lastKNumbers(n, k) {
+
+    let result = [1];
+
+    for(let i = 1; i < n; i++){
+
+        result[i] = sumLastK(result, k);
+
     }
-    console.log(array);
+
+    function sumLastK(array = result, k) {
+
+        k = array.length > k ? k : array.length;
+
+        let sum = 0;
+
+        for(let i = 1; i <= k; i++){
+
+            sum += array[array.length - i];
+
+        }
+
+        return sum;
+
+    }
+
+    console.log(`[${result.join(', ')}]`);
+
 }
 
-CalculateSumOfASequence(6, 3);
+lastKNumbers(6, 3);
