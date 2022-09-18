@@ -1,13 +1,15 @@
 function ExtreactIncreasingSubset(inputArr){
-    let currentBiggest = Number.MIN_VALUE;
-    let result = [];
-    for(let currNumber of inputArr){
-      if (currNumber >= currentBiggest){
-        result.push(currNumber);
-        currentBiggest = currNumber;
-      }
-    }
-    return result;
+    let res = [];
+    let biggestOne = inputArr[0];
+    res = inputArr.reduce((acc,current) => {
+        if(current >= biggestOne){
+            acc.push(current);
+            biggestOne=current;
+        }
+        return acc;
+    }, [])
+    console.log(res)
+    return res;
 }
 
 
