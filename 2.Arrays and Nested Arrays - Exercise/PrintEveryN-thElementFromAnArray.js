@@ -1,7 +1,7 @@
 function PrintNthElement(inputArray,elementNumber){
     let result = [];
     result = inputArray.filter((x,i) => i%elementNumber == 0);
-    console.log(result);
+    return result;
 }
 
 
