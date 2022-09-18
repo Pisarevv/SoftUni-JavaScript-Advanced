@@ -7,7 +7,7 @@ function RotateArray(arr,rotationCount){
        }
        arr[0] = lastElement;    
     }
-    console.log(arr);
+    console.log(arr.join(' '));
 }
 
 
