@@ -9,7 +9,6 @@ function sortNumbers(inputArray){
        result.push(currentSmall);
        result.push(currentBig);
     }
-console.log(result)
     return result;
 
 }
