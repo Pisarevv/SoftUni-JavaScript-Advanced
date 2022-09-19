@@ -3,7 +3,7 @@ function sortByTwoCriteria(inputArray){
        return ((a.length - b.length ) || (a.localeCompare(b)))
     });
 
-    console.log(sortedArray);
+    console.log(sortedArray.join(`\n`));
 }
 
 sortByTwoCriteria(['alpha', 
