@@ -8,7 +8,6 @@ function ExtreactIncreasingSubset(inputArr){
         }
         return acc;
     }, [])
-    console.log(res)
     return res;
 }
 
