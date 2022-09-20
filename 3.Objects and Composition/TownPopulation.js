@@ -8,11 +8,15 @@ function ReturnTownPopulation(inputArray){
         let cityPopulation = splitString[1];
 
         let resultObject = generateTownObject(cityName,cityPopulation);
+        if(result.some(x => x.cityName == resultObject.name)){
+            x.population == resultObject.name;
+            continue;
+        }
         result.push(resultObject);
     }
 
-    for(let [key,value] of Object.entries(result)){
-        console.log(`${key} : ${value}`)
+    for(const cityObject of result){
+        console.log(`${cityObject.name}:${cityObject.population}`);
     }
 
     function generateTownObject(name,population){
