@@ -11,7 +11,7 @@ function ComposeObjects(libraries,orders){
        result.push(currentObject);        
     }
 
-    console.log(result);
+    return result;
 
 
     function CreateObject(name,parts){
