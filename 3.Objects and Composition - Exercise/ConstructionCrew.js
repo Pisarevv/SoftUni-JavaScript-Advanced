@@ -1,6 +1,5 @@
 function createWorker(inputObject){
    inputObject.dizziness == true ? hydrateWorker() : inputObject;
-   console.log(inputObject);
    return inputObject;
    
    function hydrateWorker(){
