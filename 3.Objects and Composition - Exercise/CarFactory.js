@@ -23,10 +23,6 @@ function createCar(inputObject){
 
    return newObject;
 
-
-
-
-
 }
 
 
