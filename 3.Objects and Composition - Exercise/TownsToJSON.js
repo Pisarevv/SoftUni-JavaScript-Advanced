@@ -9,9 +9,9 @@ function printTownsWithInfo(inputArr){
     let longitude = Number(rowInformation[2]);
     
     let object = {
-        [tableColumns[0]]:town,
-        [tableColumns[1]]:Number((latitude).toFixed(2)),
-        [tableColumns[2]]:Number((longitude).toFixed(2))
+        Town:town,
+        Latitude:Number((latitude).toFixed(2)),
+        Longitude:Number((longitude).toFixed(2))
     }
     result.push(object);
 
@@ -28,6 +28,7 @@ function printTownsWithInfo(inputArr){
 
 
 printTownsWithInfo(['| Town | Latitude | Longitude |',
-'| 42.696552 | 23.32601 |',
-'| Beijing | 39.913818 | 116.363625 |']
+'| Veliko Turnovo | 43.0757 | 25.6172 |',
+'| Monatevideo | 34.50 | 56.11 |']
+
 )
