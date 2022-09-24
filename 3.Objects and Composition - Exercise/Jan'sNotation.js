@@ -46,7 +46,7 @@ function notate(inputArray){
     result.push(curResult);
     
   }
-  console.log(result)
+  console.log(result.join(' '));
 }
 
 

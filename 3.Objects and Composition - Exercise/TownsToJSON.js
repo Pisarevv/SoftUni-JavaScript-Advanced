@@ -1,7 +1,7 @@
 function printTownsWithInfo(inputArr){
   let tableColumns = splitAndTrim(inputArr[0]);
   let result = [];
-  for(let i = 1; i < tableColumns.length; i++){
+  for(let i = 1; i < inputArr.length; i++){
     let currentRow = inputArr[i];
     let rowInformation = splitAndTrim(currentRow);
     let town = rowInformation[0];
@@ -28,7 +28,6 @@ function printTownsWithInfo(inputArr){
 
 
 printTownsWithInfo(['| Town | Latitude | Longitude |',
-'| Veliko Turnovo | 43.0757 | 25.6172 |',
-'| Monatevideo | 34.50 | 56.11 |']
+'| Veliko Turnovo | 43.0757 | 25.6172 |']
 
 )
