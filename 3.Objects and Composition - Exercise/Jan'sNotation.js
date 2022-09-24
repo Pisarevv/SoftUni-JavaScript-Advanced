@@ -3,8 +3,8 @@ function notate(inputArray){
   let numbers = inputArray.filter(x => typeof(x) ==	"number");
   let operators = inputArray.filter(x => typeof(x) == "string");
 
-  let result;
-  if(numbers.length <= operators.length){
+  let result =[];
+  if(numbers.length <= operators.length || numbers.length === 0 ){
     console.log("Error: not enough operands!");
 
     return;
@@ -13,44 +13,53 @@ function notate(inputArray){
     console.log("Error: too many operands!");
     return;
   }
-  while(true){
-    if(numbers.length == 1){
-        console.log(numbers.toString());
-        return;
+
+  for(let element of inputArray){
+    if(typeof(element) === "number"){
+      result.push(element);
+      continue;
     }
-    let firstNumber = numbers.pop();
-    let secondNumber = numbers.pop();
-    let operand = operators.shift();
-    let result;
+    let operand = element;
+    let secondNumber = result.pop();
+    let firstNumber = result.pop();
+    
+    let curResult = 0;
 
     switch(operand){
         case"+":{
-            result = firstNumber + secondNumber;
+          curResult =  (firstNumber + secondNumber);
             break;
         }
         case"-":{
-            result = firstNumber - secondNumber;
+          curResult =  (firstNumber - secondNumber);
             break;
         }
         case"*":{
-            result = firstNumber * secondNumber;
+          curResult =  (firstNumber * secondNumber);
             break;
         }
         case"/":{
-            result = firstNumber / secondNumber;
+          curResult = (firstNumber / secondNumber);
             break;
         }
     }
-    numbers.unshift(result);
+    result.push(curResult);
     
   }
+  console.log(result)
 }
 
 
 
-notate([3,
-    4,
-    '+']
+notate([-1,
+  1,
+  '+',
+  101,
+  '*',
+  18,
+  '+',
+  3,
+  '/']
    )
 
    console.log('----------------');
