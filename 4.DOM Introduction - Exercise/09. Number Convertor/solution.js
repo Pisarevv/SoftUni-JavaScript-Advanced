@@ -17,6 +17,24 @@ function solve() {
 
 
     function convert(){
+        let convertType = document.getElementById("selectMenuTo").value;
+        let inputValue = Number(document.getElementById("input").value);
+        let outputElement = document.getElementById("result");
+        let result;
+        switch(convertType){
+            case"binary":{
+                result = inputValue.toString(2);
+                break;
+
+            }
+            case"hexadecimal":{
+                result = inputValue.toString(16).toUpperCase();
+                break;
+
+            }
+        }
+        outputElement.value = result;
+
 
     }
 }
