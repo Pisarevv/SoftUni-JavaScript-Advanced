@@ -8,14 +8,13 @@ function findMagicMatrix(matrix)
         let sumColTwo = 0;
         for(let col = 0; col < matrix.length; col++){
            sumColOne += matrix[i][col];
-           sumColOne += matrix[i + 1][col];
+           sumColTwo += matrix[i + 1][col];
         } 
          if(sumRowOne !== sumRowTwo || sumColOne !== sumColTwo){
-            console.log(false);
+
             return false;
          }
     }
-    console.log(true)
     return true;
    
 }
