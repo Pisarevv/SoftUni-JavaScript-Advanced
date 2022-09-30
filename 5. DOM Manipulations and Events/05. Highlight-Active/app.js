@@ -1,10 +1,18 @@
 function focused() {
-    let takenElement = document.querySelector("h1");
-    takenElement.addEventListener('mousemove', focus);
-    takenElement.addEventListener('mouseout', unfocus);
-
+    let takenElements = document.getElementsByTagName("input");
+    for(let element of takenElements){
+        element.addEventListener('focus', focus);
+        element.addEventListener('blur', unfocus);
+    
+    }
+    
     function focus(event){
-        let currentElement = event.target;
+        let currentElement = event.target.parentElement;
         currentElement.classList.add("focused");
+    }
+
+    function unfocus(event){
+        let currentElement = event.target.parentElement;
+        currentElement.classList.remove("focused");
     }
 }
