@@ -4,7 +4,6 @@ function solve() {
    function onClick () {
       let restaurantRecievedValues = JSON.parse(document.querySelectorAll("div#inputs textarea")[0].value);
       let result = [];
-      console.log(restaurantRecievedValues)
       for(let restaurant of restaurantRecievedValues){
          let name = restaurant.split(' - ')[0];
          let workers =  restaurant.split(' - ')[1].split(', ');
@@ -56,7 +55,6 @@ function solve() {
       }
       bestResWorkersList = bestResWorkersList.trim();
       bestRestorauntWorkersOutput.textContent = bestResWorkersList;
-      console.log()
 
       
       
