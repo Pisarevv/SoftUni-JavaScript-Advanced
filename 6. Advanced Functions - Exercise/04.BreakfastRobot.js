@@ -1,4 +1,4 @@
-function robotCook(){
+function solution(command,item,quantity){
 
     let recepies = createRecepie();
     let ingredients  = createIngridients();
