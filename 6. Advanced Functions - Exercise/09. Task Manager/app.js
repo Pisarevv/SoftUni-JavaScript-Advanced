@@ -1,14 +1,75 @@
 function solve() {
 
-    let addTaskSection = document.getElementsByTagName('section')[0];
-    let openSection = document.getElementsByTagName('section')[1];
-    let inprogressSection = document.getElementsByTagName('section')[2];
-    let completeSection = document.getElementsByTagName('section')[3];
+    let inputTaskName = document.getElementById('task')
+    let inputDescription = document.getElementById('description');
+    let inputDate = document.getElementById('date');
 
-    let task = document.getElementById('task');
-    let description = document.getElementById('description');
-    let dueDate = document.getElementById('date');
+    const sections = Array.from(document.querySelectorAll('section')).map(e => e.children[1]);
+    let addTaskSection = sections[0];
+    let openSection = sections[1];
+    let inprogressSection = sections[2];
+    let completeSection = sections[3];
     let btnAdd = document.getElementById('add');
+    btnAdd.addEventListener('click', addTask);
+
+
+    function addTask () {
+        event.preventDefault();
+
+
+        if(inputTaskName && inputDescription && inputDate){
+
+            let newArticle = createElement('article');
+            let newh3 = createElement('h3',inputTaskName.value);
+            let newpFirst = createElement('p',`Description: ${inputDescription.value}`);
+            let newpSecond = createElement('p',`Due Date: ${inputDate.value}`);
+            let newDiv = createElement('div',"", "flex");
+            let greenButton = createElement('button','Start','green');
+            let redButton = createElement('button','Delete','red');
+            let orangebutton = createElement('button','Finish','orange')
+
+            newArticle.appendChild(newh3);
+            newArticle.appendChild(newpFirst);         
+            newArticle.appendChild(newpSecond);
+            newDiv.appendChild(greenButton);
+            newDiv.appendChild(redButton);
+            newArticle.appendChild(newDiv);         
+
+            openSection.appendChild(newArticle);
+
+            inputTaskName.value = "";
+            inputDescription.value= "";
+            inputDate.value = "";
+
+
+            redButton.addEventListener('click', deleteArticle);
+            greenButton.addEventListener('click', moveArticleToInProgress);
+            orangebutton.addEventListener('click', moveArticleToFinish);
+
+
+
+
+            function deleteArticle() {
+                newArticle.remove();
+            }
+    
+            function moveArticleToInProgress() {
+                greenButton.remove();
+                newDiv.appendChild(orangebutton);
+                inprogressSection.appendChild(newArticle);
+            }
+
+            function moveArticleToFinish(){
+                newDiv.remove();
+                completeSection.appendChild(newArticle);
+            }
+  
+        }
+
+        
+    };
+
+
 
     function createElement(type,text,className) {
         let result = document.createElement(type);
@@ -16,45 +77,16 @@ function solve() {
         result.textContent = text;
 
         if(className){
-            result.classList.add(className);
+           result.className = className;
         }
 
         return result;
 
     }
 
-    btnAdd.addEventListener('click', () => {
-        event.preventDefault();
-        let inputTaskName = document.getElementById("task").value
-        let inputDescription = document.getElementById("description").value;
-        let inputDate = document.getElementById("date").value;
-
-        if(inputTaskName && inputDescription && inputDate){
-            let newArticle = createElement('article');
-            let newh3 = createElement('h3',inputTaskName);
-            let newpFirst = createElement('p',`Description: ${inputDescription}`);
-            let newpSecond = createElement('p',`Due Date: ${inputDate}`);
-            let newDiv = createElement('div',"", "flex");
-            let greenButton = createElement('button','Start','green');
-            let redButton = createElement('button','Delete','red');
-            newArticle.appendChild(newh3);
-            newArticle.appendChild(newpFirst);         
-            newArticle.appendChild(newpSecond);
-            newDiv.appendChild(greenButton);
-            newDiv.appendChild(redButton);
-            newArticle.appendChild(newDiv);           
-            openSection.children[1].appendChild(newArticle);
-
-
-            redButton.addEventListener('click', (e) => {
-                newArticle.remove();
-            })
-
-        }
-    });
-
-
 }
+
+
 
 
 
