@@ -36,6 +36,8 @@ function solution(){
             prepare : (recipe,quantity) => {
                 let ingredientsCopy = JSON.stringify(ingredients);
                 ingredientsCopy = JSON.parse(ingredientsCopy);
+                for(let i = 0; i < quantity; i++)
+                {
                 let currentRecipie = recepies[recipe];
                 for(let ingredient in currentRecipie){
                     let currentNeededIngridientQuantity = currentRecipie[ingredient];
@@ -48,6 +50,7 @@ function solution(){
                         ingredientsCopy[ingredient] -= currentNeededIngridientQuantity;
                         
                     }
+                }
                 }
                 ingredients = ingredientsCopy;
                 return `Success`;
