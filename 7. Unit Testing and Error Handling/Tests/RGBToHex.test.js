@@ -37,6 +37,17 @@ describe('RGB to hex should return hex value of a color', () => {
 
     })
 
+    it('If the input is null the function should return undefined', () =>{
+        //assign
+        let red = null;
+        let green  = null;
+        let blue = null;
+        let expetedOutput = undefined;
+        //act && assert
+        assert.equal(rgbToHexColor(red,green,blue), expetedOutput);
+
+    })
+
     it('If the input is a function the function should return undefined', () =>{
         //assign
         let red = {};
@@ -91,6 +102,17 @@ describe('RGB to hex should return hex value of a color', () => {
 
     })
 
+    it('If the first input that is for red is decimal function should return undefined', () =>{
+        //assign
+        let red = 10.5;
+        let green = 10;
+        let blue = 10;
+        let expetedOutput = undefined;
+        //act && assert
+        assert.equal(rgbToHexColor(red,green,blue), expetedOutput);
+
+    })
+
     it('If the first input that is for green is not a number function should return undefined', () =>{
         //assign
         let red = 10;
@@ -113,10 +135,21 @@ describe('RGB to hex should return hex value of a color', () => {
 
     })
 
-    it('If the first input that is for red is above 255 function should return undefined', () =>{
+    it('If the first input that is for green is above 255 function should return undefined', () =>{
         //assign
         let red = 10;
         let green = 256;
+        let blue = 10;
+        let expetedOutput = undefined;
+        //act && assert
+        assert.equal(rgbToHexColor(red,green,blue), expetedOutput);
+
+    })
+
+    it('If the first input that is for green is decimal function should return undefined', () =>{
+        //assign
+        let red = 10;
+        let green = 10.5;
         let blue = 10;
         let expetedOutput = undefined;
         //act && assert
@@ -157,6 +190,17 @@ describe('RGB to hex should return hex value of a color', () => {
 
     })
 
+    it('If the first input that is for blue is decimalfunction should return undefined', () =>{
+        //assign
+        let red = 10;
+        let green = 10;
+        let blue = 10.5;
+        let expetedOutput = undefined;
+        //act && assert
+        assert.equal(rgbToHexColor(red,green,blue), expetedOutput);
+
+    })
+
 
 
     // corret answers
@@ -183,4 +227,24 @@ describe('RGB to hex should return hex value of a color', () => {
         assert.equal(rgbToHexColor(red,green,blue), expetedOutput);
 
     })
+
+    it('returned color should be black', () => {
+         //assign
+         let red = 0;
+         let green = 0;
+         let blue = 0;
+         let expetedOutput = '#000000';
+         //act && assert
+         assert.equal(rgbToHexColor(red,green,blue), expetedOutput);
+    })
+
+    it('returned color should be white', () => {
+        //assign
+        let red = 255;
+        let green = 255;
+        let blue = 255;
+        let expetedOutput = '#FFFFFF';
+        //act && assert
+        assert.equal(rgbToHexColor(red,green,blue), expetedOutput);
+   })
 })
