@@ -2,9 +2,6 @@ let {assert} = require('chai');
 let mathEnforcer = require('../04.MathEnforcer');
 
 
-
-
-
 describe('mathEnforcer should be able to do its nested functions and return correct result', () => {
 
     describe('addFive should add return the input plus five', () => {
