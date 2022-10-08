@@ -7,13 +7,8 @@ class Circle{
         this.radius = value /2;
     }
     get area() {
-        return Math.PI * this.diameter;
-    }
-
-
-
-
-    
+        return Math.PI * (this.radius ** 2);
+    } 
 }
 
 let c = new Circle(2);
