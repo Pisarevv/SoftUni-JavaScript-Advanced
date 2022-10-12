@@ -18,7 +18,6 @@ function toStringExtension() {
         }
         toString(){
             return `Teacher (name: ${this.name}, email: ${this.email}, subject: ${this.subject})`;
-            ('Teacher (name: Ivan, email: ivan@ivan.com, subject: Graphics)')
         }
     };
 
