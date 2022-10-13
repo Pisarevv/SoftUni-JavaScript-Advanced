@@ -37,7 +37,18 @@ function solve() {
 
          }
 
-         object.averageSalary = (currentSalaryOfWorkers / object.workers.length).toFixed(2);
+         object.averageSalary = calculateAverageSalary();
+
+
+         function calculateAverageSalary(){
+            let workers = object.workers;
+            let sumSalary = 0;
+            for(let worker of workers){
+               sumSalary += worker.salary;
+            }
+            return (sumSalary / workers.length).toFixed(2);
+
+         }
 
       }
       for(let object of result){
@@ -53,7 +64,7 @@ function solve() {
       for(let worker of result[0].workers){
          bestResWorkersList += `Name: ${worker.name} With Salary: ${worker.salary} `;
       }
-      bestResWorkersList = bestResWorkersList.trim();
+      bestResWorkersList = bestResWorkersList.trimEnd();
       bestRestorauntWorkersOutput.textContent = bestResWorkersList;
 
       
