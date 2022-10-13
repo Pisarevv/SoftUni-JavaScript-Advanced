@@ -2,16 +2,16 @@
 
     String.prototype.ensureStart = function (startStr) {
         if (this.startsWith(startStr)) {
-            return newstring = this + '';
+            return this.toString();
         }
         else {
-            return newString = startStr + this;
+            return this.toString();
         };
     };
 
     String.prototype.ensureEnd = function (endString) {
         if (this.endsWith(endString)) {
-            return newstring = this + "";
+            return this.toString();
         }
         else {
             return newString = this + endString;
@@ -27,40 +27,28 @@
         };
     };
 
-    String.prototype.truncate = function (n) {
+    String.prototype.truncate = function(n) {
 
-        if(n < 4){
-            let string = `.`.repeat(n);
-            return string;
+        if(Number(n) < 4) {
+
+            return ".".repeat(Number(n));
+
         }
 
-        if (this.length < n) {
-            return newstring = this + "";
-        }
-        else if (this.length >= n)
-        {
-            let lastIndexOfSpace = this.lastIndexOf(" ");
-            if (lastIndexOfSpace >= 0) {
-                if (lastIndexOfSpace + 3 <= this.length) {
-                    return this.slice(0, lastIndexOfSpace) + "...";
-                }
-            }
-            else if (lastIndexOfSpace == -1) {
-                 if (n >= 4) {
-                    return this.slice(0, n - 3) + "...";
-                }
-                else {
-                    let resultString = '';
-                    for (let i = 0; i < n; i++) {
-                        resultString += '.';
-                    }
-                    return resultString;
-                }
-            }
-        }
+        if (Number(n) >= this.length) {
+                
+            return this.toString();
 
+        }
+        
+        let lastWhitespace = this.toString().substring(0, n - 2).lastIndexOf(" ");
 
-    };
+        return lastWhitespace !== -1 
+            ? `${this.toString().substring(0, lastWhitespace)}...` 
+            : `${this.toString().substring(0, n - 3)}...`;
+        
+    }
+
 
     String.format = function (inputString, ...params) {
 
@@ -81,8 +69,20 @@
 })()
 
 
-let str = '1234';
+let str = 'my string';
+str = str.ensureStart('my');
+str = str.ensureStart('hello ');
+str = str.truncate(16);
+console.log(str);
+str = str.truncate(14);
+console.log(str);
+str = str.truncate(8);
+console.log(str);
 str = str.truncate(4);
 console.log(str);
-str = str.truncate(6);
+str = str.truncate(2);
 console.log(str);
+str = String.format('The {0} {1} fox',
+  'quick', 'brown');
+str = String.format('jumps {0} {1}',
+  'dog');
