@@ -1,8 +1,11 @@
 function rectangle(width,height,color){
+
+    let modifiedColor = color[0].toUpperCase() + color.substring(1,color.length)
+
     return{
         width,
         height,
-        color,
+        color: modifiedColor,
         calcArea:function(){
            return height*width;
         }
