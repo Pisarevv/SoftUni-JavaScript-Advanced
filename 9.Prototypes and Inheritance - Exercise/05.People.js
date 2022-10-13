@@ -34,7 +34,7 @@ function solution(){
             super(name,age);
             this.tasks = [`${this.name} is working on a complicated task.`,
             `${this.name} is taking time off work.`,
-            `${this.name}is supervising junior workers.`
+            `${this.name} is supervising junior workers.`
             ];
         }
     };
@@ -42,9 +42,8 @@ function solution(){
     class Manager extends Employee {
         constructor(name,age){
             super(name,age);
-            this.tasks = [`${this.name} is working on a complicated task.`,
-            `${this.name} is taking time off work.`,
-            `${this.name}is supervising junior workers.`
+            this.tasks = [`${this.name} scheduled a meeting.`,
+            `${this.name} is preparing a quarterly report.`           
             ];
             this.dividend = 0;
         }
