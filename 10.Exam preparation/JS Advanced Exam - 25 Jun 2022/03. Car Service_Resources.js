@@ -44,3 +44,16 @@ const carService = {
     return totalSum;
   },
 };
+
+
+ //assign
+ let partsToOorder = [{ part: "coil springs", price: 230 }, {part: "clutch", price : 1200}];
+ let partsCatalog = [{ part: "blowoff valve", price: 145 }, { part: "coil springs", price: 230 }, {part: "clutch", price : 1200}];
+ let expectedResult = 230 + 1200;
+
+ //act && assert 
+console.log(carService.partsToBuy(partsCatalog,partsToOorder));
+
+
+
+module.exports = carService;
