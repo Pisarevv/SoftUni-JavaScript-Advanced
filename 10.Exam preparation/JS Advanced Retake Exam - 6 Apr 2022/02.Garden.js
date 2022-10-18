@@ -86,9 +86,9 @@ class Garden {
 		}
 
 		else{
-			this.storage.forEach(plant => buffer+=`${plant.plantName} (${plant.quantity}),`);
+			this.storage.forEach(plant => buffer+=`${plant.plantName} (${plant.quantity}), `);
 
-			buffer = buffer.substring(0,buffer.length-1);
+			buffer = buffer.substring(0,buffer.length-2);
 		}
 
 		return buffer.trimEnd();
