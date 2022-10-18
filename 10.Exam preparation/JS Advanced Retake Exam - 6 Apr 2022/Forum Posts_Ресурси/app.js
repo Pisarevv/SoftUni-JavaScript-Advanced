@@ -26,7 +26,7 @@ function solve() {
     let categoryInput = categoryField.value;
     let contentInput = contentField.value;
 
-    if(!titleInput || !categoryInput || !categoryInput){
+    if(!titleInput || !categoryInput || !contentInput){
       return;
     }
 
